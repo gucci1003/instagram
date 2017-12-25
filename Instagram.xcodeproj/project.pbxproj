@@ -38,6 +38,8 @@
 		C8F91E1D1FEB90F30060B1B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F91E1C1FEB90F30060B1B4 /* SystemConfiguration.framework */; };
 		C8F91E1F1FEB91080060B1B4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F91E1E1FEB91080060B1B4 /* MobileCoreServices.framework */; };
 		C8F91E211FEB913A0060B1B4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F91E201FEB913A0060B1B4 /* CoreData.framework */; };
+		C8F91E261FF0758E0060B1B4 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F91E251FF0758E0060B1B4 /* Const.swift */; };
+		C8F91E2E1FF0A4360060B1B4 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F91E2D1FF0A4360060B1B4 /* PostData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		C8F91E1E1FEB91080060B1B4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C8F91E201FEB913A0060B1B4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C8F91E241FEB91E50060B1B4 /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Instagram-Bridging-Header.h"; path = "Instagram/Instagram-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		C8F91E251FF0758E0060B1B4 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		C8F91E2D1FF0A4360060B1B4 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		CB34D15B0A2FFD6ECCE9021A /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 		DAE373852488195134B18665 /* Pods-InstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramUITests/Pods-InstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DFD46F32A7D428578C7F2AD3 /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,12 +221,14 @@
 		C8F91DA21FE9217A0060B1B4 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				C8F91E2D1FF0A4360060B1B4 /* PostData.swift */,
 				C8F91E241FEB91E50060B1B4 /* Instagram-Bridging-Header.h */,
 				C8F91E031FEB8F7E0060B1B4 /* AdobeCreativeSDKCore.framework */,
 				C8F91E041FEB8F7E0060B1B4 /* AdobeCreativeSDKImage.framework */,
 				C8F91DA31FE9217A0060B1B4 /* AppDelegate.swift */,
 				C8F91DA51FE9217A0060B1B4 /* ViewController.swift */,
 				C8F91DA71FE9217A0060B1B4 /* Main.storyboard */,
+				C8F91E251FF0758E0060B1B4 /* Const.swift */,
 				C8F91DF51FE922F30060B1B4 /* LoginViewController.swift */,
 				C8F91DF71FE9230E0060B1B4 /* HomeViewController.swift */,
 				C8F91DFB1FE923440060B1B4 /* PostViewController.swift */,
@@ -553,10 +559,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8F91E021FEB67020060B1B4 /* ImageSelectViewController.swift in Sources */,
+				C8F91E2E1FF0A4360060B1B4 /* PostData.swift in Sources */,
 				C8F91DFC1FE923440060B1B4 /* PostViewController.swift in Sources */,
 				C8F91DF61FE922F30060B1B4 /* LoginViewController.swift in Sources */,
 				C8F91DA61FE9217A0060B1B4 /* ViewController.swift in Sources */,
 				C8F91DA41FE9217A0060B1B4 /* AppDelegate.swift in Sources */,
+				C8F91E261FF0758E0060B1B4 /* Const.swift in Sources */,
 				C8F91DFE1FE923670060B1B4 /* SettingViewController.swift in Sources */,
 				C8F91DF81FE9230E0060B1B4 /* HomeViewController.swift in Sources */,
 			);

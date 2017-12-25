@@ -1,14 +1,6 @@
-//
-//  ImageSelectViewController.swift
-//  Instagram
-//
-//  Created by 関口 聡 on 2017/12/19.
-//  Copyright © 2017年 gucci1003. All rights reserved.
-//
-
 import UIKit
 
-class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AdobeUXImageEditorViewControllerDelegate {
     
     @IBAction func handleLibraryButton(_ sender: Any) {
         // ライブラリ（カメラロール）を指定してピッカーを開く
@@ -29,11 +21,23 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
             self.present(pickerController, animated: true, completion: nil)
         }
     }
-
+    
     @IBAction func handleCancelButton(_ sender: Any) {
         // 画面を閉じる
         self.dismiss(animated: true, completion: nil)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     // 写真を撮影/選択したときに呼ばれるメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -50,27 +54,16 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
                 adobeViewController.delegate = self
                 self.present(adobeViewController, animated: true, completion:  nil)
             }
-            
         }
         
         // 閉じる
         picker.dismiss(animated: true, completion: nil)
     }
     
+    // フォトライブラリやカメラ起動中にキャンセルされたときに呼ばれるメソッド
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         // 閉じる
         picker.dismiss(animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // AdobeImageEditorで加工が終わったときに呼ばれるメソッド
@@ -89,16 +82,4 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         // 加工画面を閉じる
         editor.dismiss(animated: true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
