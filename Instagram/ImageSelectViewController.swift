@@ -1,7 +1,7 @@
 import UIKit
 
 class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AdobeUXImageEditorViewControllerDelegate {
-    
+
     @IBAction func handleLibraryButton(_ sender: Any) {
         // ライブラリ（カメラロール）を指定してピッカーを開く
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
@@ -47,7 +47,6 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
             
             // あとでAdobeUXImageEditorを起動する
             // AdobeUXImageEditorで、受け取ったimageを加工できる
-            // ここでpresentViewControllerを呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
             DispatchQueue.main.async {
                 // AdobeImageEditorを起動する
                 let adobeViewController = AdobeUXImageEditorViewController(image: image)
@@ -79,7 +78,6 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
     
     // AdobeImageEditorで加工をキャンセルしたときに呼ばれる
     func photoEditorCanceled(_ editor: AdobeUXImageEditorViewController) {
-        // 加工画面を閉じる
         editor.dismiss(animated: true, completion: nil)
     }
 }
